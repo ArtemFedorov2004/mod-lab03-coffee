@@ -74,7 +74,8 @@ TEST(AutomataTest, UnsupportedOperationExceptionOnInsufficientFunds) {
     automata.coin(50);
     automata.choice("Coffe");
 
-    std::string expected_output = "UNSUPPORTED OPERATION EXCEPTION: no such money\n";
+    std::string expected_output 
+        = "UNSUPPORTED OPERATION EXCEPTION: no such money\n";
     EXPECT_EQ(output.str(), expected_output);
 }
 
@@ -86,11 +87,11 @@ TEST(AutomataTest, SuccessfulDrinkPreparation) {
     automata.coin(500);
     automata.choice("Coffe");
 
-    std::string expected_output = "INFO: start cooking...\nINFO: complete cooking\n";
+    std::string expected_output 
+        = "INFO: start cooking...\nINFO: complete cooking\n";
     EXPECT_EQ(output.str().substr(
         output.str().find("INFO: start cooking..."),
-        expected_output.size()
-    ), expected_output);
+        expected_output.size()), expected_output);
     EXPECT_EQ(automata.getState(), STATE::WAIT);
 }
 

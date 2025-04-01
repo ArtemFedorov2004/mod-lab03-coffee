@@ -15,7 +15,8 @@ enum class STATE {
 
 class Automata {
  public:
-    explicit Automata(std::ostream& output) : out(output), cash(0), state(STATE::OFF) {
+    explicit Automata(std::ostream& output) : out(output), 
+        cash(0), state(STATE::OFF) {
         menu = {
             {"Coffe", 500},
             {"Tea", 40},
