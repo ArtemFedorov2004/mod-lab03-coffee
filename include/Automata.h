@@ -14,8 +14,8 @@ enum class STATE {
 };
 
 class Automata {
-public:
-    Automata(std::ostream& output) : out(output), cash(0), state(STATE::OFF) {
+ public:
+    explicit Automata(std::ostream& output) : out(output), cash(0), state(STATE::OFF) {
         menu = {
             {"Coffe", 500},
             {"Tea", 40},
@@ -32,7 +32,7 @@ public:
     void logMenu();
     int getCash();
 
-private:
+ private:
     std::ostream& out;
     int cash;
     std::map<std::string, int> menu;
@@ -41,3 +41,4 @@ private:
     void cook();
     void finish();
 };
+

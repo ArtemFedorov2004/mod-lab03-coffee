@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h>
 #include <sstream>
+#include <string>
 #include "Automata.h"
 
 TEST(AutomataTest, InitialState) {
@@ -86,7 +87,10 @@ TEST(AutomataTest, SuccessfulDrinkPreparation) {
     automata.choice("Coffe");
 
     std::string expected_output = "INFO: start cooking...\nINFO: complete cooking\n";
-    EXPECT_EQ(output.str().substr(output.str().find("INFO: start cooking..."), expected_output.size()), expected_output);
+    EXPECT_EQ(output.str().substr(
+        output.str().find("INFO: start cooking..."),
+        expected_output.size()
+    ), expected_output);
     EXPECT_EQ(automata.getState(), STATE::WAIT);
 }
 
